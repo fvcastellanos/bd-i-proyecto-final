@@ -8,7 +8,14 @@ The project is structure using the following criteria
 
 This folder contains the DDL script of the sakila database like ``` create schema, create table, create index ... ```
 
-**File: ** ```EstructuraBaseDatos.sql```
+*File: * ```EstructuraBaseDatos.sql```
 
 ### dml
 
+This folder contains the DML script to add information to the sakila scheme like ```insert...```
+
+*File: * ```DatosEjemplo.sql```
+
+### queries
+
+This folder contains all the queries according with the project definition
