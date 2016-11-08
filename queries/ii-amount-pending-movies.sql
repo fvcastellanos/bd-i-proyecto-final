@@ -17,17 +17,15 @@
       from rental r
         inner join inventory i on r.inventory_id = i.inventory_id
         inner join film f on f.film_id = i.film_id
-        inner join customer c on r.customer_id = c.customer_id
-        inner join address a on a.address_id = c.address_id
+        inner join store s on s.store_id = i.store_id
+        inner join address a on a.address_id = s.address_id
         inner join city ct on ct.city_id = a.city_id
-        inner join store s on s.store_id = c.store_id
+        inner join customer c on r.customer_id = c.customer_id
       where current_timestamp() > timestampadd(day, f.rental_duration, r.rental_date)
         and r.return_date is null
       group by s.store_id, days_late
-
     ) grouped_data
     group by store, days_late
-
   ) by_range
   group by store
   ;

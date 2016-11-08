@@ -35,14 +35,14 @@ SELECT store_id, city_id, city, ifnull(((customers_late/customers)*100), 0) late
           FROM rental r
             INNER JOIN inventory i ON r.inventory_id = i.inventory_id
             INNER JOIN film f ON f.film_id = i.film_id
-            INNER JOIN customer c ON r.customer_id = c.customer_id
-            INNER JOIN address a ON a.address_id = c.address_id
+            INNER JOIN store s ON s.store_id = i.store_id
+            INNER JOIN address a ON a.address_id = s.address_id
             INNER JOIN city ct ON ct.city_id = a.city_id
-            INNER JOIN store s ON s.store_id = c.store_id
+            INNER JOIN customer c ON r.customer_id = c.customer_id
           WHERE c.active
         ) customer_status
       GROUP BY store_id, city_id, city, late
     ) grouped_data
   GROUP BY store_id, city_id, city
 ) CUSTOMER_PERCENTAGE
-;
+ ;
