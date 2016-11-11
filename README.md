@@ -27,4 +27,5 @@ This folder contains all the queries according with the project definition, quer
 * i-late-customers.sql
 * ii-amount-pending-movies.sql
 * iii-movies-city-clasification.sql
-
+* iv-income-by-store.sql
+* v-movie-rent-behavior.sql
