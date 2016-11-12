@@ -29,3 +29,5 @@ This folder contains all the queries according with the project definition, quer
 * iii-movies-city-clasification.sql
 * iv-income-by-store.sql
 * v-movie-rent-behavior.sql
+* vi-5-most-rented-city-category.sql ???
+* viii-by-language.sql
